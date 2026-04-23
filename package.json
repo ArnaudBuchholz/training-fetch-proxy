@@ -1,0 +1,40 @@
+{
+  "name": "training-fetch-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "axios": "HTTP_PROXY=http://localhost:8989 HTTPS_PROXY=http://localhost:8989 node axios",
+    "native-fetch": "NODE_USE_ENV_PROXY=1 HTTP_PROXY=http://localhost:8989 HTTPS_PROXY=http://localhost:8989 node native-fetch",
+    "node-fetch": "node node-fetch",
+    "curl": "curl -I -x http://localhost:8989 http://www.google.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnaudBuchholz/training-fetch-proxy.git"
+  },
+  "keywords": [
+    "reserve",
+    "proxy",
+    "fetch"
+  ],
+  "author": "Arnaud Buchholz <arnaud.buchholz@free.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArnaudBuchholz/training-fetch-proxy/issues"
+  },
+  "homepage": "https://github.com/ArnaudBuchholz/training-fetch-proxy#readme",
+  "engines": {
+    "node": "24"
+  },
+  "dependencies": {
+    "axios": "^1.15.2",
+    "dotenv": "^17.4.2",
+    "http-proxy-agent": "^9.0.0",
+    "https-proxy-agent": "^9.0.0",
+    "node-fetch": "^3.3.2",
+    "reserve": "^2.3.5",
+    "undici": "^8.1.0"
+  }
+}
